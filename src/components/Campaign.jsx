@@ -100,11 +100,11 @@ const App = () => {
   useEffect(() => {
     const fetchCampaigns = async () => {
       try {
-        const response = await fetch('https://api.trackier.com/v2/publisher/campaigns?apikey=65758e75e244fcdefe79ff5ec7665758e75e2476', {
+          const response = await fetch(`/api/v2/publisher/campaigns?apikey=${import.meta.env.VITE_CAMPAIGN_API_KEY}`, {
           method: 'GET',
           headers: {
-            'Content-Type': 'application/json',
-          },
+            'Accept': 'application/json',
+          }
         });
         
         if (response.ok) {
